@@ -1,0 +1,41 @@
+{
+	"name": "example-module",
+	"version": "1.0.0",
+	"description": "module for gt titles check",
+	"scripts": {
+		"clear": "npm run clear:aot && npm run clear:build && npm run clear:output",
+		"clear:aot": "if exist aot ( rd /s /q aot )",
+		"clear:build": "if exist build ( rd /s /q build )",
+		"clear:output": "if exist output ( rd /s /q output )",
+		"build": "npm run clear && npm run compile && npm run pack",
+		"compile": "npm run compile:build && npm run compile:transpile && npm run compile:theme && npm run compile:copy",
+		"compile:build": "node scripts/compiler.js",
+		"compile:copy": "node scripts/copier.js",
+		"compile:sass": "node-sass --include-path node_modules/ionic-angular/themes -o src/ src/",
+		"compile:theme": "node scripts/composer.js",
+		"compile:transpile": "ngc -p tsconfig.json",
+		"pack": "npm run pack:delete && npm pack",
+		"pack:delete": "del *.tgz"
+	},
+	"keywords": [
+		"gt",
+		"check"
+	],
+	"author": "tommaso sebastianelli",
+	"license": "ISC",
+	"main": "./output/index.js",
+	"private": false,
+	"dependencies": {
+		"moment": "^2.22.1"
+	},
+	"devDependencies": {
+		"@angular/core": "^5.2.9",
+		"@angular/compiler": "^5.2.9",
+		"@angular/compiler-cli": "^5.2.9",
+		"@angular/http": "^5.2.9",
+		"@types/node": "^9.4.7",
+		"ionic-angular": "^3.9.2",
+		"rxjs": "^5.5.7",
+		"typescript": "^2.7.2"
+	}
+}

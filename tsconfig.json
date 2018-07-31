@@ -1,0 +1,37 @@
+{
+	"angularCompilerOptions": {
+		"genDir": "aot"
+	},
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"declaration": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"lib": [ "dom",  "es2015" ],
+		"module": "es2015",
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"outDir": "./output",
+		"preserveConstEnums": true,
+		"removeComments": false,
+		"rootDir": "./build",
+		"skipLibCheck": true,
+		"stripInternal": true,
+		"sourceMap": true,
+		"sourceRoot": "./build",
+		"target": "es5",
+		"types": [ "node" ]
+	},
+	"exclude": [
+		"src",
+		"node_modules",
+		"output",
+		"scripts",
+		"temp",
+		"**/*.spec.ts"
+	],
+	"include": [
+		"build"
+	]
+}
