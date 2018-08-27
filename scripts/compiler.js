@@ -34,16 +34,6 @@ function codeBuild(source, target) {
 				);
 
 			if (stats.isFile()) {
-				if (ext == '.js') {
-					var tsName = path.join(source, item);
-					var tsBuffer = system.readFileSync(tsName, { encoding: 'utf8' });
-
-					system.writeFileSync(
-						path.join(target, item),
-						tsBuffer,
-						{ encoding: 'utf8' }
-					);
-				}
 				if (ext == '.ts') {
 					var tsName = path.join(source, item);
 					var tsBuffer = system.readFileSync(tsName, { encoding: 'utf8' });
